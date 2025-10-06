@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shaadi • Reception • Haldi • Mehendi</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Segoe UI', Roboto, system-ui, -apple-system, 'Noto Sans', sans-serif;
+      color:#2b2b2b;
+      background: radial-gradient(circle at 10% 10%, #fff4e6 0%, #fffaf5 40%, #fff7f0 100%);
+      min-height:100vh;overflow-x:hidden;position:relative;overflow:hidden;
+    }
+
+   
+    @keyframes fall {
+      0% {transform: translateY(-10%) rotate(0deg);opacity:1;}
+      100% {transform: translateY(110vh) rotate(360deg);opacity:0;}
+    }
+    .petal {
+      position:absolute;top:-10vh;width:30px;height:30px;background:url('https://cdn-icons-png.flaticon.com/512/4150/4150897.png') no-repeat center/contain;animation:fall linear infinite;opacity:0.8;
+    }
+
+    header{display:flex;justify-content:space-between;align-items:center;padding:20px;background:#fff5ed;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+    header h1{font-size:22px;color:#8b4513;display:flex;align-items:center;gap:10px;}
+    nav a{margin:0 10px;text-decoration:none;color:#8b4513;font-weight:bold;}
+    nav a.active{border-bottom:2px solid #ff9800;}
+    main{padding:40px;text-align:center;position:relative;z-index:2;}
+    section{display:none;padding:40px;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.1);margin:20px 0;color:#4a2e2e;animation:fadeIn 1.5s ease;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+    section.active{display:block;}
+
+    .shaadi{background:linear-gradient(180deg,#ffe5b4,#fff8e1);} 
+    .reception{background:linear-gradient(180deg,#f3e5f5,#ede7f6);} 
+    .haldi{background:linear-gradient(180deg,#fff59d,#fffde7);} 
+    .mehendi{background:linear-gradient(180deg,#c8e6c9,#f1f8e9);} 
+    .p {
+     font-weight: bold;
+    }
+    footer{text-align:center;padding:20px;background:#fff5ed;color:#8b4513;position:relative;z-index:2;}
+
+    .ganesha {
+      width:120px;margin:10px auto;display:block;animation:float 4s ease-in-out infinite;
+    }
+    @keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+    .couple {
+      width:180px;margin-top:20px;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🙏 A & V Wedding Celebration 💍</h1>
+    <nav>
+        <a href="#haldi" data-page="haldi">Haldi</a>
+        <a href="#mehendi" data-page="mehendi">Mehendi</a>
+      <a href="#shaadi" class="active" data-page="shaadi">Shaadi</a>
+      <a href="#reception" data-page="reception">Reception</a>
+    </nav>
+  </header>
+
+  <main>
+      
+          <section id="haldi" class="haldi">
+            <img class="ganesha" src="https://renownedevents.in/cdn/shop/files/FlowerDecoronHaldiFunction.jpg?v=1740045444" alt="Lord Ganesha">
+            <h2>Haldi Ceremony</h2>
+            <p>Feel the warmth of turmeric, laughter, and blessings as we prepare the couple for their new journey with joy and tradition.</p>
+           
+          </section>
+    <section id="shaadi" class="shaadi active">
+      <img class="ganesha" src="https://i.ytimg.com/vi/W8lpkv1GFQU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD5JL4_iknrOYUm-pKjR6WHQMVdNQ" alt="Lord Ganesha">
+      <h2>The Wedding Ceremony</h2>
+      <p>Witness the divine union of two souls surrounded by blessings, traditional rituals, and divine chants under the gaze of Lord Ganesha.</p>
+      <img class="couple" src="https://www.masala.com/cloud/2025/03/28/image-6-768x1024.jpg" alt="Bride and Groom">
+      <p>Join us for the epic wedding of Mr. Vikas & Ms. Ankita on 5th Dec</p>
+    </section>
+
+    <section id="reception" class="reception">
+      
+      <h2>The Grand Reception</h2>
+      <p>Join us for an evening filled with laughter, music, and a royal feast as we celebrate love and togetherness.</p>
+      <p>The Grand Reception is planned to be on 7th Dec</p>
+      
+    </section>
+
+    <section id="mehendi" class="mehendi">
+      <img class="ganesha" src="https://lh6.googleusercontent.com/QB-C9cjl9fezcRi6Pm-rysP0Fc9cjds3Xg3ZgTeDCl3WbKQlA7d8RjmTfcBmW5t-sRtpWlFI1Eo_JH_RoUvMbTlN_WjMiiNVnkek4pknf2tqLpIEMoghVna2fET-Z1OCQid6c9AfdWbvIqrBOhQgaQ" alt="Lord Ganesha">
+      <h2>Mehendi Celebration</h2>
+      <p>Experience vibrant colors, intricate henna designs, and joyous tunes of dholak in this beautiful pre-wedding ritual.</p>
+      
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Vikas & Ankita Wedding | With Love and Blessings</p>
+  </footer>
+
+  <script>
+    
+    const navLinks=document.querySelectorAll('nav a');
+    const sections=document.querySelectorAll('section');
+    navLinks.forEach(link=>{
+      link.addEventListener('click',e=>{
+        e.preventDefault();
+        navLinks.forEach(l=>l.classList.remove('active'));
+        sections.forEach(s=>s.classList.remove('active'));
+        link.classList.add('active');
+        document.getElementById(link.dataset.page).classList.add('active');
+      });
+    });
+
+   
+    const colors=['#ffb6c1','#ffc0cb','#ffe4e1','#fff0f5'];
+    for(let i=0;i<15;i++){
+      const petal=document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left=Math.random()*100+'vw';
+      petal.style.animationDuration=(5+Math.random()*5)+'s';
+      petal.style.animationDelay=(Math.random()*5)+'s';
+      petal.style.opacity=Math.random();
+      document.body.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
+
